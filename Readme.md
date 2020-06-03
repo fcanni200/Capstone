@@ -1,19 +1,19 @@
 #Capstone Project Overview
 ##Application Name
 **********************************************
-Tech Job Seeker
+Vehicle Service Webpage 
 
 ##Elevator Pitch
 **********************************************
-This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.
-
-This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.This application allows job seekers to find and search for jobs on the market and for users to search for jobs.
+This application allows a user to create an account and add their vehicle information upon creation. Once an account is created the app will ask for make modle and year of vehcile and how many miles on the vehcile at the last service. The app will then calculate how many miles till your next oil change. The app also allows users to add multiple vehciles to their account and delete ones they may not own anymore. 
 
 ##Key Features
 **********************************************
-1. User and Admin Login
-2. Saved jobs within User Profiles
-3. Google Maps integration for Employer location
+1. User login 
+2. Create user accounts 
+3. Save multiple vehciles per user account 
+4. Delete vehicles per user account 
+5. View how long till next oil change or service
 
 ##Technologies List
 **********************************************
@@ -21,7 +21,9 @@ This application allows job seekers to find and search for jobs on the market an
 2. Java
 3. Bootstrap
 4. CSS
-5. Google Maps API
+5. Thymeleaf 
+6. Gradle 
+7. MySql database 
 
 ##Example Applications
 **********************************************
@@ -31,20 +33,14 @@ monster.com : https://www.monster.com/
 
 ##Initial User stories
 **********************************************
-As a Job Seeker I want to list all available jobs so that I can get an overview of the overall job market.
+As a user I want to be able to create an account and login in to my own page.
 
-As a Job Seeker I want to search for jobs by location, skill and employer so I can find jobs that are within specfication.
+As a user I want to be able to add my own vehicles to my own page to keep them organized.
 
-As a Job Seeker I want to access a personal profile of my choices so I can have jobs specific to my needs display.
+As a user I want to be able to delete vehicles I may not own anymore.
 
-As a Job Seeker I want to save relivent jobs to my profile so I can return to them on a later date.
+As a user I want to be able to see a list of different types of services avilable to my vehicle like tire rotation oil change etc.
 
-As a Company I want to add in a new job entries so I can allow job seekers to easily find them.
+As a user I want to be able to document my oil changes and services and update when the next services are.
 
-As a Company I want to edit in a job entries so I can update their status their properties easily.
-
-As a Company I want to disable job entries that I am no longer offering so that job seekers can not see them.
-
-As a Company I want to delete job entries that are no longer valid so that job seeker can not access them.
-
-As a Company I want to see a list of all of my job entries that are they can easily be edited and updated in the future.
+As a user I want to be able to have my oil changes to update each service every 3k miles so I know how many miles my vehcile will be at for its next service.
