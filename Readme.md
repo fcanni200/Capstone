@@ -27,8 +27,7 @@ This application allows a user to create an account and add their vehicle inform
 
 ##Example Applications
 **********************************************
-Indeed.com : https://www.indeed.com/
-monster.com : https://www.monster.com/
+Simply Auto : https://simplyauto.app/#feature
 
 
 ##Initial User stories
