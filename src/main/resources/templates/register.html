@@ -4,25 +4,25 @@
 <body class="container">
 
 <header th:replace="fragments :: page-header"></header>
-<br>
-<br>
-<br>
+
+<br><br><br><br>
+
 <form method="post">
     <div class="form-group">
         <label>Username
-            <input class="form-control" th:field="${registerFormDTO.username}" />
+            <input class="form-control" th:field="${registrationFormDTO.username}" />
         </label>
-        <p class="error" th:errors="${registerFormDTO.username}"></p>
+        <p class="error" th:errors="${registrationFormDTO.username}"></p>
     </div>
     <div class="form-group">
         <label>Password
-            <input class="form-control" th:field="${registerFormDTO.password}" type="password" />
+            <input class="form-control" th:field="${registrationFormDTO.password}" type="password" />
         </label>
-        <p class="error" th:errors="${registerFormDTO.password}"></p>
+        <p class="error" th:errors="${registrationFormDTO.password}"></p>
     </div>
     <div class="form-group">
         <label>Verify Password
-            <input class="form-control" th:field="${registerFormDTO.verifyPassword}" type="password" />
+            <input class="form-control" th:field="${registrationFormDTO.verifyPassword}" type="password" />
         </label>
     </div>
 

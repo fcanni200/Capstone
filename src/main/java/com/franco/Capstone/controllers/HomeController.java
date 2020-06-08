@@ -11,6 +11,6 @@ public class HomeController {
     @RequestMapping
     public String index(Model model){
         model.addAttribute("title", "Welcome to my homepage");
-        return "index";
+        return "redirect:/login";
     }
 }
