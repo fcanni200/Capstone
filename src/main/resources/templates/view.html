@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<h1 th:text="${'Vehicle: ' + vehicle.make}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="vehicle-listing">
+    <p th:text="${'ID: ' + vehicle.id}"></p>
+    <p th:text="${'Make: ' + vehicle.make}"></p>
+    <p th:text="${'Model: ' + vehicle.model}"></p>
+    <p th:text="${'Year: ' + vehicle.year}"></p>
+</div>
+
+
+</body>
+</html>
