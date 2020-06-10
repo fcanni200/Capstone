@@ -3,6 +3,7 @@ package com.franco.Capstone.controllers;
 
 import com.franco.Capstone.models.User;
 import com.franco.Capstone.models.Vehicle;
+import com.franco.Capstone.models.data.UserRepository;
 import com.franco.Capstone.models.data.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class HomeController {
     @Autowired
     VehicleRepository vehicleRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
     @GetMapping
     public String index(HttpServletRequest request, Model model) {
 
@@ -32,25 +36,32 @@ public class HomeController {
         User user = authenticationController.getUserFromSession(session);
 
         model.addAttribute("username", user.getUsername());
+        model.addAttribute("vehicles", user.getVehicles());
         return "index";
     }
 
     @GetMapping("add")
-    public String displayAddVehiclesForm(Model model) {
+    public String displayAddVehiclesForm(Model model,HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user = authenticationController.getUserFromSession(session);
+
+        model.addAttribute("user",user);
         model.addAttribute(new Vehicle());
         return "add";
     }
 
     @PostMapping("add")
     public String processAddVehiclesForm(@ModelAttribute @Valid Vehicle newVehicle,
-                                         Errors errors) {
+                                         Errors errors, Model model, @RequestParam int userId) {
 
         if (errors.hasErrors()) {
+            model.addAttribute("users", userRepository.findAll());
             return "add";
         }
 
-        Vehicle save = vehicleRepository.save(newVehicle);
-        return "redirect:";
+        newVehicle.setOwner(userRepository.findById(userId).get());
+        vehicleRepository.save(newVehicle);
+        return "redirect:/";
     }
 
     @GetMapping("view/{vehicleId}")
