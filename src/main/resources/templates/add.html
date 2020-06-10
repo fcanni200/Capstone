@@ -8,6 +8,7 @@
 <h1>Add Vehicle</h1>
 
 <form method="post" style="max-width:600px;">
+
     <div class="form-group">
         <label th:for="name">Make</label>
         <input class="form-control" th:field="${vehicle.make}" />
@@ -15,13 +16,12 @@
     </div>
 
     <div class="form-group">
-<!--  <label th:for="name">Owner</label>&ndash;&gt;-->
-      <select name = "userId" class="form-control"></select>
-      <option th:text="${user.username}" th:value="${user.id}" ></option>
-    </select>
+        <select name = "userId" class="form-control">
+        <option th:text="${user.username}" th:value="${user.id}" ></option>
+        </select>
     </div>
-    <input type="text">
-    <div class="form-group">
+
+     <div class="form-group">
         <label th:for="name">Model</label>
         <input class="form-control" th:field="${vehicle.model}" />
         <span th:errors="${vehicle.model}" class="error"></span>
@@ -32,6 +32,8 @@
         <input class="form-control" th:field="${vehicle.year}" />
         <span th:errors="${vehicle.year}" class="error"></span>
     </div>
+
+    
 
     <input type="submit" value="Add Vehicle" />
 </form>
