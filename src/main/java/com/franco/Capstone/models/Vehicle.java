@@ -31,6 +31,13 @@ public class Vehicle extends AbstractEntity {
         this.owner = owner;
     }
 
+    public static Object getAll() {
+        return null;
+    }
+
+    public static void remove(int id) {
+    }
+
     public String getMake() {
         return make;
     }
@@ -62,6 +69,7 @@ public class Vehicle extends AbstractEntity {
     public void setOwner(User owner) {
         this.owner = owner;
     }
+
 
     @Override
     public String toString(){

@@ -64,6 +64,28 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @GetMapping("delete")
+    public String displayDeleteVehicleForm(Model model,HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User user = authenticationController.getUserFromSession(session);
+
+        model.addAttribute("user","Delete Vehicles");
+        model.addAttribute("vehicles",vehicleRepository.findAll());
+        return "delete";
+    }
+
+    @PostMapping("delete")
+    public String processDeleteVehicleForm(@RequestParam(required = false) int[] vehicleIds){
+
+        if(vehicleIds != null){
+            for(int id : vehicleIds){
+                Vehicle.remove(id);
+            }
+        }
+
+        return "redirect:/";
+    }
+
     @GetMapping("view/{vehicleId}")
     public String displayViewVehicle(Model model, @PathVariable int vehicleId) {
 
