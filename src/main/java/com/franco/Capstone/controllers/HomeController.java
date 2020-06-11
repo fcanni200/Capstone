@@ -70,7 +70,7 @@ public class HomeController {
         User user = authenticationController.getUserFromSession(session);
 
         model.addAttribute("user","Delete Vehicles");
-        model.addAttribute("vehicles",vehicleRepository.findAll());
+        model.addAttribute("vehicles",user.getVehicles());
         return "delete";
     }
 
@@ -79,7 +79,7 @@ public class HomeController {
 
         if(vehicleIds != null){
             for(int id : vehicleIds){
-                Vehicle.remove(id);
+                vehicleRepository.deleteById(id);
             }
         }
 
