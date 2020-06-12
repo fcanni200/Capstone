@@ -15,6 +15,7 @@ public class Vehicle extends AbstractEntity {
     private String make;
     private String model;
     private String year;
+    private String imageLink;
 
     @ManyToOne
     @JoinColumn(name="user_id")
@@ -23,12 +24,13 @@ public class Vehicle extends AbstractEntity {
     public Vehicle(){
     }
 
-    public Vehicle(String aMake, String aModel, String someYear, User owner) {
+    public Vehicle(String aMake, String aModel, String someYear, User owner, String imageLink) {
         super();
         this.make = aMake;
         this.model = aModel;
         this.year = someYear;
         this.owner = owner;
+        this.imageLink = imageLink;
     }
 
     public static Object getAll() {
@@ -70,6 +72,13 @@ public class Vehicle extends AbstractEntity {
         this.owner = owner;
     }
 
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
 
     @Override
     public String toString(){

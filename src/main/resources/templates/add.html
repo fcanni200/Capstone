@@ -28,6 +28,11 @@
     </div>
 
     <div class="form-group">
+        <label>Image Link </label>
+        <input class="form-control" th:field="${vehicle.imageLink}" />
+    </div>
+
+    <div class="form-group">
         <label th:for="name">Year</label>
         <input class="form-control" th:field="${vehicle.year}" />
         <span th:errors="${vehicle.year}" class="error"></span>
